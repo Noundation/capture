@@ -9,6 +9,7 @@
     "@vercel/analytics": "^1.0.0",
     "apify-client": "^2.7.1",
     "axios": "^1.3.5",
+    "metascraper": "^5.34.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",

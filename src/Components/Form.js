@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-const Form = (props) => {
+function Form(props){
   const [formState, setFormDisabled] = useState(false);
 
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -11,7 +11,6 @@ const Form = (props) => {
     setFormDisabled(formState);
     props.handleFormState(formState);
   };
-
 
   const onSubmit = async (data) => {
     let datasetId;
@@ -31,12 +30,12 @@ const Form = (props) => {
         "waitToLoadPage": 6000,
         // "cookieWindowSelector": ".cookieConsent button",
         "slowDownAnimations": true,
-        "lossyCompression": false,
-        "loslessCompression": true,
+        "lossyCompression": true,
+        "loslessCompression": false,
         // "viewportWidth": parseInt(data.viewportWidth),
         // "viewportHeight": parseInt(data.viewportHeight),
-        "viewportWidth": 1280,
-        "viewportHeight": 720,
+        "viewportWidth": 640,
+        "viewportHeight": 360,
       });
       const { data: { data: { defaultDatasetId } } } = response;
       datasetId = defaultDatasetId;
@@ -66,8 +65,8 @@ const Form = (props) => {
     try {
       await axios.post('https://api.airtable.com/v0/' + process.env.REACT_APP_AIRTABLE_BASE_ID + '/Captures', {
         fields: {
-          "url": String(data.url),
-          "gifUrl": gifOutput,
+          "URL": String(data.url),
+          "GIF URL": gifOutput,
         },
       }, {
         headers: {
