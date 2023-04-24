@@ -23,7 +23,8 @@ function Form(props){
         "proxyOptions": {
             "useApifyProxy": true
         },
-        "frameRate": parseInt(data.frameRate),
+        // "frameRate": parseInt(data.frameRate),
+        "frameRate": 8,
         "scrollDown": true,
         "scrollPercentage": 10,
         "recordingTimeBeforeAction": 200,
@@ -90,13 +91,13 @@ function Form(props){
           <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="URL" id="url" {...register('url', { required: true })} disabled={formState} />
           {errors.url && <p className="text-red-500 text-xs italic">This field is required.</p>}
         </div>
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="frameRate">
             Frame Rate (in ms)
           </label>
           <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" placeholder="7" id="frameRate" {...register('frameRate', { required: true })} disabled={formState}/>
           {errors.scrollDuration && <p className="text-red-500 text-xs italic">This field is required.</p>}
-        </div>
+        </div> */}
         {/* <label htmlFor="viewportWidth">Screenshot width (in px)</label>
         <input type="number" id="viewportWidth" {...register('viewportWidth', { required: true })} disabled={isDisabled}/>
         {errors.viewportWidth && <span>This field is required</span>}
