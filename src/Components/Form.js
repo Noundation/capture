@@ -24,7 +24,7 @@ function Form(props){
             "useApifyProxy": true
         },
         // "frameRate": parseInt(data.frameRate),
-        "frameRate": 8,
+        "frameRate": 20,
         "scrollDown": true,
         "scrollPercentage": 10,
         "recordingTimeBeforeAction": 200,
@@ -35,8 +35,8 @@ function Form(props){
         "loslessCompression": false,
         // "viewportWidth": parseInt(data.viewportWidth),
         // "viewportHeight": parseInt(data.viewportHeight),
-        "viewportWidth": 640,
-        "viewportHeight": 360,
+        "viewportWidth": 1280,
+        "viewportHeight": 720,
       });
       const { data: { data: { defaultDatasetId } } } = response;
       datasetId = defaultDatasetId;
